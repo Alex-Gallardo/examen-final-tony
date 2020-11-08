@@ -1,25 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import withAlerts from '@weareluastudio/lualert'
+// ROUTER
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+// COMPONENTES
+import Home from './Pages/Home.js' 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter >
+      <Switch>
+        <Route exact path='/' component={Home}></Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
-export default App;
+export default withAlerts(App);
